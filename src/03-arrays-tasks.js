@@ -363,7 +363,8 @@ function getItemsSum(arr) {
  *  [ null, undefined, NaN, false, 0, '' ]  => 6
  */
 function getFalsyValuesCount(arr) {
-  return arr.reduce((sum, item) => { return !item ? sum + 1 : sum }, 0);
+  // eslint-disable-next-line arrow-body-style
+  return arr.reduce((sum, item) => { return !item ? sum + 1 : sum; }, 0);
 }
 
 /**
@@ -381,7 +382,7 @@ function getFalsyValuesCount(arr) {
  *    [ true, 0, 1, 'true' ], true => 1
  */
 function findAllOccurrences(/* arr, item */) {
-
+  throw new Error('Not implemented');
 }
 
 /**
@@ -396,7 +397,7 @@ function findAllOccurrences(/* arr, item */) {
  *    ['rock', 'paper', 'scissors']     => 'rock,paper,scissors'
  */
 function toStringList(/* arr */) {
-
+  throw new Error('Not implemented');
 }
 
 
@@ -427,7 +428,7 @@ function toStringList(/* arr */) {
  *    ]
  */
 function sortCitiesArray(/* arr */) {
-
+  throw new Error('Not implemented');
 }
 
 /**
@@ -449,7 +450,7 @@ function sortCitiesArray(/* arr */) {
  *           [0,0,0,0,1]]
  */
 function getIdentityMatrix(/* n */) {
-
+  throw new Error('Not implemented');
 }
 
 /**
@@ -466,7 +467,7 @@ function getIdentityMatrix(/* n */) {
  *     3, 3   => [ 3 ]
  */
 function getIntervalArray(/* start, end */) {
-
+  throw new Error('Not implemented');
 }
 
 /**
@@ -481,7 +482,7 @@ function getIntervalArray(/* start, end */) {
  *   [ 1, 1, 2, 2, 3, 3, 4, 4] => [ 1, 2, 3, 4]
  */
 function distinct(/* arr */) {
-
+  throw new Error('Not implemented');
 }
 
 /**
