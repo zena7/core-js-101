@@ -1,3 +1,6 @@
+/* eslint-disable prefer-rest-params */
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-plusplus */
 /* *************************************************************************************************
  *                                                                                                *
  * Please read the following tutorial before implementing tasks:                                   *
@@ -27,8 +30,19 @@
  *  21 => 'Fizz'
  *
  */
-function getFizzBuzz(/* num */) {
-  throw new Error('Not implemented');
+function getFizzBuzz(num) {
+  let result;
+  if (num % 3 === 0 && num % 5 === 0) {
+    result = 'FizzBuzz';
+  } else if (num % 3 === 0) {
+    result = 'Fizz';
+  } else if (num % 5 === 0) {
+    result = 'Buzz';
+  } else {
+    result = num;
+  }
+
+  return result;
 }
 
 
@@ -43,8 +57,11 @@ function getFizzBuzz(/* num */) {
  *   5  => 120
  *   10 => 3628800
  */
-function getFactorial(/* n */) {
-  throw new Error('Not implemented');
+function getFactorial(n) {
+  if (n === 1) {
+    return 1;
+  }
+  return n * getFactorial(n - 1);
 }
 
 
@@ -60,8 +77,13 @@ function getFactorial(/* n */) {
  *   5,10  =>  45 ( = 5+6+7+8+9+10 )
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
-function getSumBetweenNumbers(/* n1, n2 */) {
-  throw new Error('Not implemented');
+function getSumBetweenNumbers(n1, n2) {
+  let sum = 0;
+  for (n1; n1 <= n2; n1++) {
+    // eslint-disable-next-line space-infix-ops
+    sum += n1;
+  }
+  return sum;
 }
 
 
@@ -80,8 +102,11 @@ function getSumBetweenNumbers(/* n1, n2 */) {
  *   10,1,1   =>  false
  *   10,10,10 =>  true
  */
-function isTriangle(/* a, b, c */) {
-  throw new Error('Not implemented');
+function isTriangle(a, b, c) {
+  const maxNumb = Math.max(a, b, c);
+
+  const numbers = [...arguments].filter((item) => item !== maxNumb);
+  return a === b && b === c ? true : numbers[0] + numbers[1] > maxNumb;
 }
 
 
@@ -164,8 +189,9 @@ function isInsideCircle(/* circle, point */) {
  *   'abracadabra'  => 'c'
  *   'entente' => null
  */
-function findFirstSingleChar(/* str */) {
-  throw new Error('Not implemented');
+function findFirstSingleChar(string) {
+  const [head, ...tail] = string;
+  return !tail.includes(head) ? head : findFirstSingleChar(string.slice(1).replace(/[head]/ig, ''));
 }
 
 
