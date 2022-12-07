@@ -190,9 +190,23 @@ function isInsideCircle(/* circle, point */) {
  *   'entente' => null
  */
 function findFirstSingleChar(string) {
-  const [head, ...tail] = string;
-  return !tail.includes(head) ? head : findFirstSingleChar(string.slice(1).replace(/[head]/ig, ''));
+  function findFirstLett(str) {
+    const [head, ...tail] = str;
+
+    return !tail.includes(head) ? head : findFirstLett(str.slice(1).replace(/[head]/ig, ''));
+  }
+  return string.split(findFirstLett(string)).length === 2 ? findFirstLett(string) : null;
 }
+
+// Или решение при помощи цикла (проще!!)
+// function findFirstSingleChar(string) {
+//   for ( let i = 0; i < string.length; i++) {
+//     if (string.split(string[i]).length === 2) {
+//       return string[i]
+//     }
+//     return null
+//   }
+// }
 
 
 /**
@@ -251,8 +265,8 @@ function reverseString(/* str */) {
  *   87354 => 45378
  *   34143 => 34143
  */
-function reverseInteger(/* num */) {
-  throw new Error('Not implemented');
+function reverseInteger(num) {
+  return Number([...num.toString(10)].reverse().join(''));
 }
 
 
